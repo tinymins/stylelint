@@ -70,6 +70,26 @@ div > #zing + .foo-bar {}
 
 ## Optional secondary options
 
+### `messageTemplate: String` (default: null)
+
+This option will change report message.
+
+For example, with `Expected class selector ".${value}" to match BEM naming. http://getbem.com/naming/`.
+
+Given the regex:
+
+```js
+/^(?:(?:(?:^|(?!^)-)[a-z]+\d*|-[a-z]*\d+)(?:__[a-z]+\d*|__[a-z]*\d+){0,1}(?:--[a-z]+\d*|--[a-z]*\d+){0,1})*$/
+```
+
+The following patterns are considered violations:
+
+```css
+.not_legal_bem {}
+```
+
+And report will be `Expected class selector ".not_legal_bem" to match BEM naming. http://getbem.com/naming/`.
+
 ### `resolveNestedSelectors: true | false` (default: `false`)
 
 This option will resolve nested selectors with `&` interpolation.
