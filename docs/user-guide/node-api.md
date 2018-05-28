@@ -61,9 +61,17 @@ The difference between the `configOverrides` and `config` options is this: If an
 
 A file glob, or array of file globs. Ultimately passed to [node-glob](https://github.com/isaacs/node-glob) to figure out what files you want to lint.
 
-Relative globs are considered relative to `process.cwd()`.
+Relative globs are considered relative to `filesCwd`.
 
 By default, all `node_modules` and `bower_components` are ignored.
+
+### `filesCwd`
+
+A folder path of current working directory for `files` glob.
+
+Relative globs in `files` are considered relative to this path.
+
+By default, `fileCwd` will be set by `process.cwd()`.
 
 ### `formatter`
 
